@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lato&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Crossing ToDo list</title>
+</head>
+
+<body>
+    <section id="main">
+        <h1>AC To-Do list manager</h1>
+        <section class="todo-wrapper">
+            <h2 id="todo-date">{{ today.date }}<br>{{ today.date }}</h2>
+            <form action="" @keydown.enter.prevent="">
+                <input class="input-todo" type="text" placeholder="Make a million bells">
+                <button class="btn btn-add" @click="addItem" label="additem">+</button>
+            </form>
+            <section class="todo-list">
+                <p class="pendingitems" class="task-count"> You have {{ pending.length }} pending items</p>
+                <div class="todo-body">
+                    <div class=tasks>
+                        <div class=task>
+                            <input type="checkbox" id="task-1" />
+                            <label for="task-1">
+                                First task 
+                            </label>
+                        </div>
+
+                        <!--end of task 1 -->
+                        <div class=task>
+                            <input type="checkbox" id="task-2" />
+                            <label for="task-2">
+                                Second task 
+                            </label>
+                        </div>
+
+                        <!--end of task 2 -->
+                        <div class=task>
+                            <input type="checkbox" id="task-3" />
+                            <label for="task-3">
+                                Third task
+
+                            </label>
+                        </div>
+
+                        <!--end of task 3-->
+
+                        <div class="delete-items">
+                            <button class="btn-delete">Clear completed tasks</button>
+                            <button class="btn-delete">Delete task</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        
+        </section>
+    </section>
+</body>
+
+</html>
+
+<!--Copy scripted from orignal creator -->
