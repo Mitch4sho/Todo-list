@@ -38,8 +38,6 @@ h1{
 form{
     overflow: overlay;
 }
-form label{}
-
 .input-todo{
     font-size: 20px;
     margin-left: 10px;
@@ -64,11 +62,28 @@ input:focus{
     border: 1px solid #13aaff;
 }
 .todo-list{
-    margin-left: 10px;
+    margin-left: 0px;
 }
 .pendingitems{
     font-size: 15px;
 }
+
+li{
+    position: relative;
+    list-style-type: none;
+    display: block;
+    margin-bottom: 10px;
+    background: #e0e8f5;
+    border-radius: 3px;
+    padding-left: 10px; 
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 10px; 
+    overflow: hidden;
+  }
+  .task{
+      width: 80%;
+  }
 
 
 
