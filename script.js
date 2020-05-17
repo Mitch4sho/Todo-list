@@ -1,10 +1,29 @@
 const taskContainer = document.querySelector('[data-tasks]')
 const newTaskForm = document.querySelector("[data-new-task-form]")
 const newTaskInput = document.querySelector("[data-new-task-input]")
+const deleteTaskButton= document.querySelector("[data-delete-task-button]")
+const dataTaskCount = document.querySelector("[data-task-count]")
 
 
 const LOCAL_STORAGE_TASK_KEY = "task.lists"
+const LOCAL_STORAGE_SELECTED_TASK_ID_KEY = "task.selectedTaskId"
 let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASK_KEY))||[]
+let selectedTaskId = localStorage.getItem
+(LOCAL_STORAGE_SELECTED_TASK_ID_KEY )
+
+taskContainer.addEventListener('click', e => {
+    if( e.target.tagName.toLowerCase()==='li'){
+        selectedTaskId= e.target.dataset.taskId
+        saveAndRender()
+    }
+})
+
+deleteTaskButton.addEventListener('click', e => {
+    tasks = tasks.filter(task => task.id != selectedTaskId)
+    selectedTaskId =null
+    saveAndRender()
+})
+
 
 newTaskForm.addEventListener("submit", e =>{
     e.preventDefault()
@@ -27,7 +46,9 @@ function saveAndRender(){
 
 function save(){
     localStorage.setItem(LOCAL_STORAGE_TASK_KEY, JSON.stringify(tasks))
+    localStorage.setItem(LOCAL_STORAGE_SELECTED_TASK_ID_KEY, selectedTaskId)
 }
+
 
 function render() {
     clearElement(taskContainer)
@@ -36,6 +57,9 @@ function render() {
     taskElement.dataset.taskId = task.id 
     taskElement.classList.add("task")
     taskElement.innerText = task.name
+    if (task.id === selectedTaskId){
+        taskElement.classList.add("active-task")
+    }
     taskContainer.appendChild(taskElement)
 })
 

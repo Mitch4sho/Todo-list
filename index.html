@@ -18,10 +18,10 @@
            
 
             <section class="todo-list">
-                <p class="pendingitems" class="task-count"> You have {{ pending.length }} pending items</p>
+                <p class="pendingitems" class="task-count" data-task-count> You have {{ pending.length }} pending items</p>
                 <div class="todo-body">
                     <ul class=tasks data-tasks>
-                        <!-- <li class=task>
+                        <!-- <li class="task, active-task">
                             <input type="checkbox" id="task-1" />
                             <label for="task-1">
                                 First task
@@ -60,7 +60,8 @@
 
                     <div class="delete-items">
                         <button class="btn-delete">Clear completed tasks</button>
-                        <button class="btn-delete">Delete task</button>
+                        <button class="btn-delete" data-delete-task-button 
+                        >Delete task</button>
                     </div>
                 </div>
             </section>
