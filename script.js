@@ -3,6 +3,7 @@ const newTaskForm = document.querySelector("[data-new-task-form]")
 const newTaskInput = document.querySelector("[data-new-task-input]")
 const deleteTaskButton= document.querySelector("[data-delete-task-button]")
 const dataTaskCount = document.querySelector("[data-task-count]")
+const currentDate = document.querySelector("[today-date]")
 
 
 const LOCAL_STORAGE_TASK_KEY = "task.lists"
@@ -19,7 +20,7 @@ taskContainer.addEventListener('click', e => {
 })
 
 deleteTaskButton.addEventListener('click', e => {
-    tasks = tasks.filter(task => task.id != selectedTaskId)
+    tasks = tasks.filter(task => task.id !== selectedTaskId)
     selectedTaskId =null
     saveAndRender()
 })
@@ -52,17 +53,28 @@ function save(){
 
 function render() {
     clearElement(taskContainer)
-    tasks.forEach(task => {
-    const taskElement = document.createElement("li")
-    taskElement.dataset.taskId = task.id 
-    taskElement.classList.add("task")
-    taskElement.innerText = task.name
-    if (task.id === selectedTaskId){
-        taskElement.classList.add("active-task")
-    }
-    taskContainer.appendChild(taskElement)
-})
+    renderTasks()
 
+    renderTaskCount()
+}
+
+function renderTaskCount(){
+    const incompleteTaskCount = tasks.filter(task => !task.complete).length
+    const taskString = incompleteTaskCount === 1 ? "task" : "tasks" 
+    dataTaskCount.innerText = `${incompleteTaskCount} ${taskString} remaining`
+}
+
+function renderTasks(){
+    tasks.forEach(task => {
+        const taskElement = document.createElement("li",)
+        taskElement.dataset.taskId = task.id 
+        taskElement.classList.add("task")
+        taskElement.innerText = task.name
+        if (task.id === selectedTaskId){
+            taskElement.classList.add("active-task")
+        }
+        taskContainer.appendChild(taskElement)
+    })
 }
 
 function clearElement(element){
@@ -73,3 +85,5 @@ function clearElement(element){
 }
 
 render()
+  
+

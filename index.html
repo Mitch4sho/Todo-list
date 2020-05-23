@@ -14,39 +14,13 @@
     <section id="main">
         <h1>AC To-Do list manager</h1>
         <section class="todo-wrapper">
-            <h2 id="todo-date">{{ today.date }}<br>{{ today.date }}</h2>
+            <h2 id="todo-date" today-date>{{ today.date }}<br>{{ today.date }}</h2>
            
 
             <section class="todo-list">
                 <p class="pendingitems" class="task-count" data-task-count> You have {{ pending.length }} pending items</p>
                 <div class="todo-body">
-                    <ul class=tasks data-tasks>
-                        <!-- <li class="task, active-task">
-                            <input type="checkbox" id="task-1" />
-                            <label for="task-1">
-                                First task
-                            </label>
-                        </li> -->
-
-                        <!--end of task 1 -->
-                        <!-- <li class=task>
-                            <input type="checkbox" id="task-2" />
-                            <label for="task-2">
-                                Second task
-                            </label>
-                        </li> -->
-
-                        <!--end of task 2 -->
-                        <!-- <li class=task>
-                            <input type="checkbox" id="task-3" />
-                            <label for="task-3">
-                                Third task
-
-                            </label>
-                        </li> -->
-
-                        <!--end of task 3-->
-                    </ul>
+                    <ul class=tasks data-tasks> </ul>
                     <form action="" data-new-task-form>
                         <input 
                         class="input-todo"
@@ -59,9 +33,7 @@
                     </form>
 
                     <div class="delete-items">
-                        <button class="btn-delete">Clear completed tasks</button>
-                        <button class="btn-delete" data-delete-task-button 
-                        >Delete task</button>
+                        <button class="btn-delete" data-delete-task-button>Delete task</button>
                     </div>
                 </div>
             </section>
