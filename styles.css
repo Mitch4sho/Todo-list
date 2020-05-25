@@ -24,6 +24,7 @@ h1{
     max-width: 100%;  
     position: relative;
     margin: 20px auto 50px;
+    padding-bottom: 20px;
     border: 1px solid #009473;
     border-radius: 4px;
     overflow: hidden; 
@@ -33,11 +34,15 @@ h1{
     font-size: 1.2em;
     color: #d4f3a5; 
     font-weight: normal;
+    margin-left: 10px;
 }
-ul{
-    list-style: circle;
- 
+
+.pendingItems{
+    color: #d4f3a5;
+    font-size: 20px;
+    margin-left: 20px;
 }
+
 .task:hover{
     opacity: 0.7;
 }
@@ -47,17 +52,19 @@ ul{
     font-size: 1.2rem;
     line-height: 1.7;
     position: relative;
-    /* margin-bottom: 10px; */
-    border-radius: 3px;
+    margin-bottom: 10px;
+    border-radius: 25px;
     padding-left: 10px; 
     padding-top: 12px;
     padding-bottom: 12px;
-    padding-right: 10px; 
+    /* padding-right: 10px;  */
     overflow: hidden;
     cursor: pointer;
-}   
+    background-color:beige;
+    color: #B5651D;
+}
 .active-task{
-    color: #d4f3a5;
+    color: #86613c;
     text-decoration: underline;
 }
 
@@ -79,7 +86,7 @@ form{
 
 input[type="text"]{
     border: 1px solid #ddd;
-    min-width: 80%;
+    min-width: 65%;
     transition: all ease-in 0.25s;
 }
 
@@ -87,13 +94,26 @@ input:focus{
     outline: none;
     border: 1px solid #13aaff;
 }
+
+.input-todo{
+    background-color: beige;
+    border-radius: 25px;
+    font-size: 15px;
+    margin-left: 40px;
+    padding-left: 10px;
+    color: #B5651D
+}
+
 .todo-list{
     margin-left: 0px;
 }
-.pendingitems{
-    font-size: 15px;
+
+.buttons-for-tasks{
+    margin-left: 40px;
+    border-radius: 25px;
 }
 
- 
+
+
 
 

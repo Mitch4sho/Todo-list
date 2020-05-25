@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lato&display=swap" rel="stylesheet">
+    <link rel = "shortcut icon" type ="image/png" href = "assets /001.00395_grande.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Crossing ToDo list</title>
@@ -18,7 +19,7 @@
            
 
             <section class="todo-list">
-                <p class="pendingitems" class="task-count" data-task-count> You have {{ pending.length }} pending items</p>
+                <p class="pendingItems" class="task-count" data-task-count> You have {{ pending.length }} pending items</p>
                 <div class="todo-body">
                     <ul class=tasks data-tasks> </ul>
                     <form action="" data-new-task-form>
@@ -26,14 +27,14 @@
                         class="input-todo"
                         type="text" 
                         data-new-task-input
-                        placeholder="new task name"
-                        aria-label="new task name"
+                        placeholder="Take no bells from Tom"
+                        aria-label="Take no bells from Tom"
                         />
-                        <button class="btn-create" aria-label="create-new-task">+</button>
                     </form>
 
-                    <div class="delete-items">
+                    <div class="buttons-for-tasks">
                         <button class="btn-delete" data-delete-task-button>Delete task</button>
+                        <button class="btn-create" aria-label="create-new-task">Add Task</button>
                     </div>
                 </div>
             </section>
